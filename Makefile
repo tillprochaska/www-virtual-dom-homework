@@ -1,7 +1,7 @@
 src = src
 dist = dist
 config = config
-lang = en
+lang = de
 
 contents = $(src)/*.md
 bibliography = $(src)/bibliography/bibliography.bib
