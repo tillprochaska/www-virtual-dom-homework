@@ -17,9 +17,9 @@ revision of the core language of the World Wide Web: the Hypertext
 Markup Language (HTML). …</p>
 ```
 
-Das Document Object Model, kurz DOM, ist eine Repräsentation eines HTML- oder XML-Dokuments. Es dient als Schnittstelle, um auf Elemente des Dokuments zuzugreifen oder es zu verändern. Das DOM stellt ein Dokument als Baum dar, wobei die einzelnen Elemente Knoten dieses Baumes sind. Das Beispiel aus [@lst:html-snippet] kann als sogenannter DOM-Baum auch wie in [@fig:dom-tree] dargestellt werden.
+Das Document Object Model, kurz DOM, ist eine Repräsentation eines HTML- oder XML-Dokuments. Es dient als Schnittstelle, um auf Elemente des Dokuments zuzugreifen oder es zu verändern. Das DOM stellt ein Dokument als Baum dar, wobei die einzelnen Elemente Knoten dieses Baumes sind.
 
-Der wohl bekannteste Anwendungsfall dürfte die Javascript-Implementation des DOMs sein. JavaScript ist eine Programmiersprache, die im Browser ausgeführt werden kann, um z. B. auf Nutzerinteraktionen zu reagieren. Einige Möglichkeiten, mittels JavaScript auf ein HTML-Dokument zuzugreifen oder es zu verändern sind in [@lst:js-dom] dargestellt.
+Der wohl bekannteste Anwendungsfall dürfte die Javascript-Implementation des DOMs sein. JavaScript ist eine Programmiersprache, die im Browser ausgeführt werden kann. Während allein mit HTML lediglich statische Dokumente in einem Browser dargestellt werden können, so erlaubt es JavaScript beispielsweise, in Folge einer Nutzerinteraktion das DOM zu verändern. Damit bildet es den Grundstein interaktiver Webseiten und Webanwendungen. Einige Möglichkeiten, mittels JavaScript auf ein HTML-Dokument zuzugreifen oder es zu verändern sind in [@lst:js-dom] dargestellt.
 
 ```{#lst:js-dom .js caption="Beispielhafte Zugriffe auf und Manipulationen an ein HTML-Dokument mithilfe der JavaScript-DOM-API"}
 let titleNode = document.querySelector(".title");
@@ -38,5 +38,3 @@ console.log(timeNode.getAttribute("time")); // "2018-10-18"
 timeNode.setAttribute("time", "2019-01-01");
 console.log(timeNode.getAttribute("time")); // "2019-01-01"
 ```
-
-![HTML-Dokument als DOM-Baum](resources/01_dom-tree.pdf){#fig:dom-tree}
