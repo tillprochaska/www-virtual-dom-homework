@@ -5,6 +5,7 @@ lang = de
 
 contents = $(src)/*.md
 bibliography = $(src)/bibliography/bibliography.bib
+csl = $(src)/bibliography/iso690.csl
 output = $(dist)/output.pdf
 
 pandoc-config = $(config)/pandoc-config.yml $(config)/pandoc-config-$(lang).yml
@@ -14,6 +15,7 @@ $(output): $(dist)/pandoc-config.yml $(shell find $(src) -type f)
 	pandoc \
 		$(pandoc_options) \
 		--bibliography $(bibliography) \
+		--csl $(csl) \
 		--metadata-file="$(dist)/pandoc-config.yml" \
 		--resource-path=$(src) \
 		-o $@ \
@@ -24,7 +26,10 @@ $(output): $(dist)/pandoc-config.yml $(shell find $(src) -type f)
 $(dist)/pandoc-config.yml: $(pandoc-config)
 	echo "" > $@ && cat $^ >> $@
 
-.PHONY: clean
+.PHONY: clean open
+
+open:
+	open $(output)
 
 clean:
 	rm dist/*
